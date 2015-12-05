@@ -6,6 +6,8 @@ This guide is written for terminal usage, but all of the concepts should transfe
 ## Installing
 If you're using a terminal, the official Git client is probably the way to go on Linux and OS X. On Windows, "Git for Windows" or "git-bash" are probably worth using. This guide _will_ show you all the key terminal commands.
 
+Note that the default (no-arg) behaviour of some commands differs depending on the exact version of Git. For that reason, I'll be avoiding those defaults (such as `git push` with no remote or branch specified).
+
 If you need a GUI on Windows or OS X, SourceTree is fairly popular.
 
 # Sync, do stuff, Commit, Push
@@ -22,6 +24,8 @@ Write code, add images, etc., just as you normally would.
 
 ## Commit
 When you're ready to commit, first *stage* any new or modified files, and then *commit* those files. Use `git add $path` to stage a file or directory, `git commit` to commit all currently-staged files, and `git commit $path` to commit all modified (but _not_ new) files under that path.
+
+Note that Git _does_ distinguish between new files, and existing-but-modified files!
 
 For example, commit all new or modified files, from the top-level directory of the repo:
 
