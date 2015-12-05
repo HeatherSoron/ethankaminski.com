@@ -1,0 +1,4 @@
+*.swp
+
+# we're using Jade as a templating engine, so any HTML files are probably generated
+public/**/*.html
