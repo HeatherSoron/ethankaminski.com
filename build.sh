@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jade --out=public --hierarchy templates/main
+./node_modules/jade/bin/jade.js --out=public --hierarchy templates/main
