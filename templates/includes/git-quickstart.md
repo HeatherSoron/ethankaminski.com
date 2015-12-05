@@ -1,5 +1,5 @@
 # Foreword
-Someone (possibly me) has asked you to use Git, and you've never used it before. Maybe you're joining a hardcode coder in a game jam. This guide will show you the very basics, so that you can send your collaborator the code that they're asking for.
+Someone (possibly me) has asked you to use Git, and you've never used it before. Maybe you're joining a hardcore coder in a game jam. This guide will show you the very basics, so that you can send your collaborator the code that they're asking for.
 
 This guide is written for terminal usage, but all of the concepts should transfer to a GUI client.
 
