@@ -37,6 +37,8 @@ And, to commit all _changed_ files in the `assets/` directory, along with the `c
 ### Commit messages
 When you use `git commit`, Git should present you with some sort of text editor (possibly a cli editor, possibly your normal editor). The first line is used as a summary, and a fuller description of your changes goes on subsequent lines. The summary line is required, the description is optional.
 
+If you DON'T get a text editor, use the `-m` argument to `git commit`. For instance, `git commit -m 'Add note that OS X editor can be weird'`.
+
 A good commit message looks something like the following:
 
 	Added info about commits to the guide
