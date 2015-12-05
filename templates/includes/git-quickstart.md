@@ -51,11 +51,11 @@ A good commit message looks something like the following:
 	I haven't yet described when to add a description vs. when to omit it. That's more appropriate for a non-quickstart guide.
 
 ### Spurious files
-Sometimes, when running `git add`, you'll see files that shouldn't be committed. `.DS_Store` on Mac, temporary files created by your IDE, build artifacts, etc..
+Sometimes, when running `git add`, you'll see files that shouldn't be committed. Temporary files created by your IDE, build artifacts, etc..
 
 Before finalizing the commit, check the list of files that are going to be included (you can use `git status`, among other methods).
 
-To deal with those spurious files, ask your resident Git expert to unstage the files, and then help you to add them to an ignore list.
+If you see files that you didn't intend to add, ask your resident Git expert to unstage the files, and then help you to add them to an ignore list.
 
 ## Pushing
 To send your code to the remote repository, use `git push $remoteName $branchName`. In the simplest form, this will be `git push origin master`.

@@ -3,3 +3,7 @@ node_modules
 
 # we're using Jade as a templating engine, so any HTML files are probably generated
 public/**/*.html
+
+# it sounds like .DS_Store is a bad pedagogical example, but it also sounds like they generally shouldn't be commited, either
+# if you really need a .DS_Store file, explain why, and then exploit the fact that Git doesn't ignore already-tracked files
+**/.DS_Store
