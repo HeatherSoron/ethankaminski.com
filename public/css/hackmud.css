@@ -1,0 +1,10 @@
+.console-text {
+	font-weight: bold;
+	font-family: monospace;
+	background-color: black;
+	padding: 10px 0;
+}
+
+.console-text ul {
+	margin: 0;
+}

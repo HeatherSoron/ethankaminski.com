@@ -1,0 +1,84 @@
+html
+	head
+		link(href="../../css/hackmud.css" rel="stylesheet")
+	body
+		p If you have any clarifications or comments, you can contact me in-game as 'soron' (feel free to send a tell), or email me at ethan.kaminski@gmail.com.
+		section
+			h1 Basic Script Editing
+			p Start by typing '#help' into the terminal. The scripting language used is JavaScript, with a few restrictions, and a few extra macros. Feel free to ask the chat for help, too; they'll usually assist.
+			h2 #s and #db macros
+			p There are two sets of macros provided by the game, on top of standard JS. They look like '#s.user.script()', for a script call, and '#db.f()' for a MongoDB call. For the #s macros, if you want to call 'accts.balance' from inside a script, use '#s.accts.balance()'. If you want to call chats.send{channel:"0000",msg:"hello"}, use '#s.chats.send({channel:"0000", msg:"hello"})'.
+			p For DB calls, there is a #[a(href="http://pastebin.com/wxgZ6iz5") sample ledger script] available, and the current list of commands is (very briefly) described in #[a(href="https://www.hackmud.com/forums/bug_reports/limitations_issues_of__db_macro") this forum post].
+		section
+			h1 Coloring Text
+			p Color can be applied to text by wrapping it in certain symbols. This works with letters, numbers and underscores (the standard "word" characters in many languages). All currently-known text colors are shown below. 
+			.console-text
+				ul
+					li(style="color:#9D9D9D;") `0zero`
+					li(style="color:#FFFFFF;") `1one`
+					li(style="color:#1EFF00;") `2two`
+					li(style="color:#0070DD;") `3three`
+					li(style="color:#A335EE;") `4four`
+					li(style="color:#FF8000;") `5five`
+					li(style="color:#7F7F7F;") -minus-
+					li(style="color:#FF00FF;") +plus+
+					li(style="color:#00FFFF;") !bang!
+		section
+			h1 #s.scripts.lib
+			p This script is currently undocumented, and behaves differently from most other scripts. When called from inside a script, it returns an object containing a variety of utility functions. This is often assigned to a local variable 'l', as in 'var l = #s.scripts.lib();'. As a usage example, calling 'l.create_rand_string(3)', after defining 'l', will generate a 3-character random string.
+			p Details on all the functions are given below.
+			ul
+				li
+					strong ok()
+					br
+					span Returns an object containing {ok:true}. This (or an equivalent object) can be returned from your main function to generate a 'Successful' message.
+				li
+					strong not_impl()
+					br
+					span Returns an object containing {ok:false, msg: "Not Implemented"}. If you return this from your main function, you'll see a "Failure" message, with "Not Implemented" as the details.
+				li
+					strong log(m)
+					br
+					span Pushes a string representation of a value onto an array of log messages.
+				li
+					strong get_log()
+					br
+					span Returns the array used by the log() function, which you can then access. Does _not_ clone or clear the array afterwards; it's a direct reference to the same array.
+				li
+					strong rand_int(min, max)
+					br
+					span Returns an integer between min (inclusive), and max (exclusive). Note: this assumes that max > min. If max <= min, strange things might happen.
+				li
+					strong are_ids_eq(id1, id2)
+					br
+					span Currently buggy. You should wait until it's fixed before using it.
+				li
+					strong is_obj(val)
+					br
+					span Returns true if val is a JS object, array, or null. i.e., simple check based on value of 'typeof val'.
+				li
+					strong is_str(val)
+					br
+					span Returns true if val is a string, based on 'typeof val'.
+				li
+					strong is_num(val)
+					br
+					span Returns true if val is a number (including infinity or NaN), based on 'typeof val'.
+				li
+					strong is_arr(val)
+					br
+					span Returns true if val is an array, using Array.isArray as the check.
+				li
+					strong is_func(val)
+					br
+					span Returns true if val is a function, based on 'typeof val'.
+				li
+					strong is_def(val)
+					br
+					span Returns true for any value except undefined.
+				li
+					strong is_valid_name(val)
+					br
+					span Returns true for valid ASCII-based lowercase identifiers: all characters are lowercase letters, numbers, or underscore, and it doesn't start with a number.
+				li
+					strong ...more docs to come...
